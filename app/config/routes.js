@@ -1,6 +1,6 @@
 //config/routes
 
-//1. include react and the router
+//1. include react library and the router
 var React = require('react');
 var Router = require('react-router');
 var Route = Router.Route;
@@ -10,7 +10,7 @@ var Route = Router.Route;
 var IndexRoute = Router.IndexRoute;
 
 
-//3. reference the components
+//3. reference the high-level components
 var Main = require('../components/Main');
 var Saved = require('../components/Saved');
 var Search = require('../components/Search.js');

@@ -5,12 +5,13 @@ var Router = require('react-router')
 // Include the Helper (for the saved recall)
 var helpers = require('../utils/helpers');
 
+console.log("Loaded newest");
 // Create the Main component
 var Main = React.createClass({
 
 	getInitialState: function(){
 		return {
-			savedArticles: ""
+			newestArticles: ""
 		}
 	},
 
@@ -19,7 +20,7 @@ var Main = React.createClass({
 		helpers.getSaved()
 			.then(function(articleData){
 				this.setState({
-					savedArticles: articleData.data
+					newestArticle: articleData.data
 				});
 				console.log("saved results", articleData.data);
 			}.bind(this))
@@ -38,7 +39,7 @@ var Main = React.createClass({
 			helpers.getSaved()
 				.then(function(articleData){
 					this.setState({
-						savedArticles: articleData.data
+						newestArticle: articleData.data
 					});
 					console.log("saved results", articleData.data);
 				}.bind(this))
@@ -50,7 +51,7 @@ var Main = React.createClass({
 
 	render: function(){
 
-		if (this.state.savedArticles == "") {
+		if (this.state.newestArticle == "") {
 			return(
 
 				<li className="list-group-item">
@@ -66,7 +67,7 @@ var Main = React.createClass({
 
 		else {
 
-			var articles = this.state.savedArticles.map(function(article, index){
+			var articles = this.state.newestArticle.map(function(article, index){
 
 				return(
 
@@ -101,11 +102,11 @@ var Main = React.createClass({
 
 						<div className="panel panel-primary">
 							<div className="panel-heading">
-								<h1 className="panel-title"><strong><i className="fa fa-download" aria-hidden="true"></i> Saved Articles</strong></h1>
+								<h1 className="panel-title"><strong><i className="fa fa-download" aria-hidden="true"></i> New! </strong></h1>
 							</div>
 							<div className="panel-body">
 								<ul className="list-group">
-								  {articles}
+								Trump Does something
 								</ul>
 							</div>
 						</div>
